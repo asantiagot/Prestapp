@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0700B7481AD9124300F03E45 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B7471AD9124300F03E45 /* FeedViewController.m */; };
+		0700B74B1AD9854000F03E45 /* DetailFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B74A1AD9854000F03E45 /* DetailFeedViewController.m */; };
+		0700B74E1AD98AD000F03E45 /* LendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B74D1AD98AD000F03E45 /* LendViewController.m */; };
+		0700B7511AD9EA2600F03E45 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B7501AD9EA2600F03E45 /* ProfileViewController.m */; };
 		07A343671AD8F3F60082B5D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A343661AD8F3F60082B5D9 /* main.m */; };
 		07A3436A1AD8F3F60082B5D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A343691AD8F3F60082B5D9 /* AppDelegate.m */; };
 		07A343701AD8F3F60082B5D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A3436E1AD8F3F60082B5D9 /* Main.storyboard */; };
@@ -31,6 +34,12 @@
 		000EFCEFA25DE07ADAE25870 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		0700B7461AD9124300F03E45 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		0700B7471AD9124300F03E45 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		0700B7491AD9854000F03E45 /* DetailFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFeedViewController.h; sourceTree = "<group>"; };
+		0700B74A1AD9854000F03E45 /* DetailFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFeedViewController.m; sourceTree = "<group>"; };
+		0700B74C1AD98AD000F03E45 /* LendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LendViewController.h; sourceTree = "<group>"; };
+		0700B74D1AD98AD000F03E45 /* LendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LendViewController.m; sourceTree = "<group>"; };
+		0700B74F1AD9EA2600F03E45 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		0700B7501AD9EA2600F03E45 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		07A343611AD8F3F60082B5D9 /* Prestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A343651AD8F3F60082B5D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A343661AD8F3F60082B5D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,6 +100,12 @@
 				07A343681AD8F3F60082B5D9 /* AppDelegate.h */,
 				07A343691AD8F3F60082B5D9 /* AppDelegate.m */,
 				07A3436E1AD8F3F60082B5D9 /* Main.storyboard */,
+				0700B74F1AD9EA2600F03E45 /* ProfileViewController.h */,
+				0700B7501AD9EA2600F03E45 /* ProfileViewController.m */,
+				0700B74C1AD98AD000F03E45 /* LendViewController.h */,
+				0700B74D1AD98AD000F03E45 /* LendViewController.m */,
+				0700B7491AD9854000F03E45 /* DetailFeedViewController.h */,
+				0700B74A1AD9854000F03E45 /* DetailFeedViewController.m */,
 				0700B7461AD9124300F03E45 /* FeedViewController.h */,
 				0700B7471AD9124300F03E45 /* FeedViewController.m */,
 				07A343711AD8F3F60082B5D9 /* Images.xcassets */,
@@ -281,6 +296,9 @@
 				07A3436A1AD8F3F60082B5D9 /* AppDelegate.m in Sources */,
 				0700B7481AD9124300F03E45 /* FeedViewController.m in Sources */,
 				07A343671AD8F3F60082B5D9 /* main.m in Sources */,
+				0700B74B1AD9854000F03E45 /* DetailFeedViewController.m in Sources */,
+				0700B7511AD9EA2600F03E45 /* ProfileViewController.m in Sources */,
+				0700B74E1AD98AD000F03E45 /* LendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

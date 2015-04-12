@@ -7,8 +7,14 @@
 //
 
 #import "AddRequestViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface AddRequestViewController ()
+{
+    int cantidad;
+    NSArray *cantidades;
+}
 
 @end
 
@@ -16,22 +22,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"Agregar Préstamo";
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Listo" style:UIBarButtonItemStyleDone target:self action:@selector(addRequest)];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancelar" style:UIBarButtonItemStylePlain target:self action:@selector(cancelRequest)];
+    self.navigationItem.rightBarButtonItem = doneButton;
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    self.pickerView.dataSource = self;
+    self.pickerView.delegate = self;
+    cantidades = [NSArray arrayWithObjects:@"5000", @"6500", @"8000", @"9500", @"11000", @"12500", @"14000", nil];
+    cantidad = 5000;
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark Picker Delegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [cantidades count];
 }
-*/
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [cantidades objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    cantidad = [[cantidades objectAtIndex:row] intValue];
+}
+
+- (void)addRequest
+{
+    PFObject *object = [PFObject objectWithClassName:@"Prestamista"];
+    [object setObject:self.fieldReq.text forKey:@"necesita"];
+    [object setObject:[NSNumber numberWithInt:cantidad] forKey:@"precio"];
+    [object setObject:[PFUser currentUser].username forKey:@"name"];
+    [object saveInBackground];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)cancelRequest
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end

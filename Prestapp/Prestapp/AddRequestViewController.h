@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddRequestViewController : UIViewController
+@interface AddRequestViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *fieldReq;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 
 @end

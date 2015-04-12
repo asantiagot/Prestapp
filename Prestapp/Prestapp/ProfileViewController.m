@@ -9,6 +9,10 @@
 #import "ProfileViewController.h"
 
 @interface ProfileViewController ()
+{
+    NSArray *ajustesArray;
+    NSArray *ajustesImages;
+}
 
 @end
 
@@ -26,8 +30,34 @@
         self.nameFacebook.text = @"Nombre de usuario";
         self.buttonLogIn.title = @"Log In";
     }
+    ajustesArray = [NSArray arrayWithObjects:@"Pago", @"Ayuda", @"Acerca de", @"Notificaciones", @"Invitar amigos", @"Condiciones", @"Reportar un problema", nil];
+    ajustesImages = [NSArray arrayWithObjects:@"Info.png", @"Ayuda.png", @"Info.png", @"Notificaciones.png", @"compartir.png", @"Condiciones.png", @"Reportar.png", nil];
+    self.tableSettings.delegate = self;
+    self.tableSettings.dataSource = self;
 }
 
+#pragma mark TableView Delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [ajustesArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellIde"];
+    if(!cell)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellIde"];
+    UIImageView *imageIcon = (UIImageView *)[cell viewWithTag:1];
+    imageIcon.image = [UIImage imageNamed:[ajustesImages objectAtIndex:indexPath.row]];
+    UILabel *labelSetting = (UILabel *)[cell viewWithTag:2];
+    labelSetting.text = [ajustesArray objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 - (IBAction)logInUser:(UIBarButtonItem *)sender

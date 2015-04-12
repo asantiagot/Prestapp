@@ -34,15 +34,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c6g-WX-ItE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c6g-WX-ItE">
                                 <rect key="frame" x="0.0" y="193" width="600" height="407"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="R9q-U7-AsD">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIde" rowHeight="80" id="R9q-U7-AsD">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R9q-U7-AsD" id="cFq-ZO-MKx">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adP-WL-75A">
+                                                    <rect key="frame" x="8" y="13" width="54" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="54" id="Qus-Mq-0Hj"/>
+                                                        <constraint firstAttribute="width" constant="54" id="ygI-IN-IhC"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKq-tE-vvi">
+                                                    <rect key="frame" x="70" y="31" width="522" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="522" id="Ruo-1A-Eyd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="adP-WL-75A" firstAttribute="top" secondItem="cFq-ZO-MKx" secondAttribute="topMargin" constant="5" id="1R5-ff-m90"/>
+                                                <constraint firstItem="kKq-tE-vvi" firstAttribute="trailing" secondItem="cFq-ZO-MKx" secondAttribute="trailingMargin" id="1vi-fC-Sfh"/>
+                                                <constraint firstItem="adP-WL-75A" firstAttribute="leading" secondItem="cFq-ZO-MKx" secondAttribute="leadingMargin" id="D6c-Ij-cq2"/>
+                                                <constraint firstItem="kKq-tE-vvi" firstAttribute="leading" secondItem="adP-WL-75A" secondAttribute="trailing" constant="8" symbolic="YES" id="Evp-o8-agQ"/>
+                                                <constraint firstItem="kKq-tE-vvi" firstAttribute="leading" secondItem="adP-WL-75A" secondAttribute="trailing" constant="8" id="Qhs-F5-RPA"/>
+                                                <constraint firstItem="kKq-tE-vvi" firstAttribute="top" secondItem="cFq-ZO-MKx" secondAttribute="topMargin" constant="23" id="WMt-gJ-Eoj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="adP-WL-75A" secondAttribute="bottom" constant="4" id="piM-gr-uEb"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -76,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2Q-KM-rxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="1848"/>
+            <point key="canvasLocation" x="1472" y="1843"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JFP-dP-i3U">
@@ -103,7 +130,7 @@
         <scene sceneID="dBh-6M-kME">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PLA-Js-3wd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="PsT-kG-4DS"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed.png" id="PsT-kG-4DS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JrK-zF-mCk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -198,6 +225,46 @@
             </objects>
             <point key="canvasLocation" x="1490" y="1141"/>
         </scene>
+        <!--Add Request View Controller-->
+        <scene sceneID="xoS-IZ-nlf">
+            <objects>
+                <viewController storyboardIdentifier="addView" id="Edu-q6-3UA" customClass="AddRequestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RSt-gL-lFX"/>
+                        <viewControllerLayoutGuide type="bottom" id="lzO-Fc-1fe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EiX-uD-tXm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Y9-B2-iIA">
+                                <rect key="frame" x="0.0" y="219" width="600" height="162"/>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Motivo de préstamo..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="85U-2w-Lyb">
+                                <rect key="frame" x="16" y="82" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Y9-B2-iIA" firstAttribute="centerY" secondItem="EiX-uD-tXm" secondAttribute="centerY" id="0rr-S2-d22"/>
+                            <constraint firstItem="6Y9-B2-iIA" firstAttribute="leading" secondItem="EiX-uD-tXm" secondAttribute="leading" id="ETt-CZ-63H"/>
+                            <constraint firstItem="85U-2w-Lyb" firstAttribute="trailing" secondItem="EiX-uD-tXm" secondAttribute="trailingMargin" id="JOv-HR-DOv"/>
+                            <constraint firstItem="85U-2w-Lyb" firstAttribute="leading" secondItem="EiX-uD-tXm" secondAttribute="leadingMargin" id="Jaf-W9-Exg"/>
+                            <constraint firstItem="6Y9-B2-iIA" firstAttribute="centerX" secondItem="85U-2w-Lyb" secondAttribute="centerX" id="Le5-2f-k5D"/>
+                            <constraint firstItem="85U-2w-Lyb" firstAttribute="top" secondItem="RSt-gL-lFX" secondAttribute="bottom" constant="62" id="sxX-c0-HA0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fieldReq" destination="85U-2w-Lyb" id="y5z-ad-aNy"/>
+                        <outlet property="pickerView" destination="6Y9-B2-iIA" id="gVN-D9-VMW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0OM-6a-8pS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308" y="-837"/>
+        </scene>
         <!--Feed View Controller-->
         <scene sceneID="YQY-s4-cUL">
             <objects>
@@ -272,9 +339,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="IFl-x0-fbW"/>
-                    <connections>
-                        <segue destination="5d1-6l-QQ1" kind="show" identifier="prestaDetail" id="g3k-VD-xPI"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8H-nm-dSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -355,6 +419,7 @@
                     <connections>
                         <outlet property="cantidadLabel" destination="LBa-6u-9Jf" id="sQn-gC-Jup"/>
                         <outlet property="pickerView" destination="iKy-XJ-tw6" id="taq-ke-yC3"/>
+                        <outlet property="slider" destination="1DU-jm-Myx" id="aaV-X2-8o5"/>
                         <outlet property="tasaLabel" destination="Cuk-7X-fb6" id="7ez-sZ-Fte"/>
                     </connections>
                 </viewController>
@@ -366,7 +431,7 @@
         <scene sceneID="9MF-9b-MlV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jxj-h6-XfM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="eVn-w8-Bit"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Perfil.png" id="eVn-w8-Bit"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GSb-MK-uU8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -385,7 +450,7 @@
         <scene sceneID="LW9-3L-VF6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SWh-Ro-LOm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favoritos" id="jUp-yg-WTv"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="Favoritos.png" id="jUp-yg-WTv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NuT-Ec-O3T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -404,7 +469,7 @@
         <scene sceneID="hXW-1I-IK9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OS5-sh-V37" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Historial" id="s7L-kS-y15"/>
+                    <tabBarItem key="tabBarItem" title="Historial" image="Historial.png" id="s7L-kS-y15"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DIv-7E-qsr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -420,4 +485,10 @@
             <point key="canvasLocation" x="678" y="1143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Favoritos.png" width="21" height="20"/>
+        <image name="Historial.png" width="20" height="14"/>
+        <image name="Perfil.png" width="20" height="20"/>
+        <image name="feed.png" width="21" height="16"/>
+    </resources>
 </document>

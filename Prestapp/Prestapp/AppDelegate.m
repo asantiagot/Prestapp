@@ -25,6 +25,13 @@
     
     [PFFacebookUtils initializeFacebook];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.953 green:0.588 blue:0.122 alpha:1.0]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setTranslucent:YES];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.051 green:0.267 blue:0.129 alpha:1.0]];
+    
     return YES;
 }
 

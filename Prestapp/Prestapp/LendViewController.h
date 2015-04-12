@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *tasaLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 - (IBAction)moveSlider:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
 @end

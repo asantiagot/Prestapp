@@ -7,6 +7,8 @@
 //
 
 #import "FeedViewController.h"
+#import "AddRequestViewController.h"
+#import "LendViewController.h"
 
 @interface FeedViewController ()
 
@@ -31,7 +33,16 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Feed";
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add)];
+    self.navigationItem.rightBarButtonItem = addButton;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 
 #pragma mark Parse Table View
 
@@ -70,11 +81,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"prestaDetail" sender:self];
+    LendViewController *lendView = [[self storyboard] instantiateViewControllerWithIdentifier:@"lendView"];
+    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:lendView];
+    [self presentViewController:nv animated:YES completion:nil];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
+- (void)add
+{
+    PFUser *user = [PFUser currentUser];
+    if(!user){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Inicia Sesión" message:@"Ve a Profile e inicia sesión para poder realizar una petición" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else{
+        AddRequestViewController *addView = [[self storyboard] instantiateViewControllerWithIdentifier:@"addView"];
+        UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:addView];
+        [self presentViewController:nv animated:YES completion:nil];
+    }
+}
 
 
 @end

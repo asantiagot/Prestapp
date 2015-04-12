@@ -14,6 +14,11 @@
     NSArray *decenas;
     NSArray *unidades;
     
+    NSDictionary *tasas;
+    
+    int cantidad;
+    int meses;
+    
     int suma;
 }
 
@@ -31,7 +36,7 @@
     self.navigationItem.rightBarButtonItem = doneButton;
     self.navigationItem.leftBarButtonItem = cancelButton;
     
-    self.tasaLabel.text = @"Tasa: 8.2";
+    self.tasaLabel.text = @"Tasa: ";
     self.cantidadLabel.text = @"Cantidad:";
     suma = 0;
     
@@ -41,6 +46,10 @@
     
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
+    cantidad = 5000;
+    meses  = 12;
+    self.slider.hidden = YES;
+
 }
 
 #pragma mark PickerView Delegate
@@ -81,6 +90,89 @@
     }
 }
 
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if(component == 0)
+        cantidad = [[cientos objectAtIndex:row] intValue];
+    if(component == 1)
+        meses = [[decenas objectAtIndex:row] intValue];
+    switch(cantidad)
+    {
+        case 5000:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"Tasa: 20%";
+            else if(meses == 24)
+                self.tasaLabel.text = @"Tasa: 22%";
+            else
+                self.tasaLabel.text = @"Tasa: 24%";
+        }
+            break;
+        case 6500:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"Tasa: 25%";
+            else if(meses == 24)
+                self.tasaLabel.text = @"Tasa: 27%";
+            else
+                self.tasaLabel.text = @"Tasa: 29%";
+        }
+            break;
+        case 8000:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"Tasa: 30%";
+            else if(meses == 24)
+                self.tasaLabel.text = @"Tasa: 32%";
+            else
+                self.tasaLabel.text = @"Tasa: 34%";
+        }
+            break;
+        case 9500:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"Tasa: 35%";
+            else if(meses == 24)
+                self.tasaLabel.text = @"Tasa: 37%";
+            else
+                self.tasaLabel.text = @"Tasa: 39%";
+        }
+            break;
+        case 11000:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"Tasa: 40%";
+            else if(meses == 24)
+                self.tasaLabel.text = @"Tasa: 42%";
+            else
+                self.tasaLabel.text = @"Tasa: 44%";
+        }
+            break;
+        case 12500:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"Tasa: 43%";
+            else if(meses == 24)
+                self.tasaLabel.text = @"Tasa: 45%";
+            else
+                self.tasaLabel.text = @"Tasa: 47%";
+        }
+            break;
+        case 14000:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"Tasa: 45%";
+            else if(meses == 24)
+                self.tasaLabel.text = @"Tasa: 47%";
+            else
+                self.tasaLabel.text = @"Tasa: 49%";
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)sumaCantidad:(NSArray *)array row:(NSInteger)row
 {
     int numero = [[array objectAtIndex:row] floatValue];
@@ -95,7 +187,82 @@
 
 - (void)prestar
 {
-    
+    switch(cantidad)
+    {
+        case 5000:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"20";
+            else if(meses == 24)
+                self.tasaLabel.text = @"22";
+            else
+                self.tasaLabel.text = @"24";
+        }
+            break;
+        case 6500:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"25";
+            else if(meses == 24)
+                self.tasaLabel.text = @"27";
+            else
+                self.tasaLabel.text = @"29";
+        }
+            break;
+        case 8000:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"30";
+            else if(meses == 24)
+                self.tasaLabel.text = @"32";
+            else
+                self.tasaLabel.text = @"34";
+        }
+            break;
+        case 9500:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"35";
+            else if(meses == 24)
+                self.tasaLabel.text = @"37";
+            else
+                self.tasaLabel.text = @"39";
+        }
+            break;
+        case 11000:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"40";
+            else if(meses == 24)
+                self.tasaLabel.text = @"42";
+            else
+                self.tasaLabel.text = @"44";
+        }
+            break;
+        case 12500:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"43";
+            else if(meses == 24)
+                self.tasaLabel.text = @"45";
+            else
+                self.tasaLabel.text = @"47";
+        }
+            break;
+        case 14000:
+        {
+            if(meses == 12)
+                self.tasaLabel.text = @"45";
+            else if(meses == 24)
+                self.tasaLabel.text = @"47";
+            else
+                self.tasaLabel.text = @"49";
+        }
+            break;
+        default:
+            break;
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

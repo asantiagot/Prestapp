@@ -11,6 +11,8 @@
 		0700B74B1AD9854000F03E45 /* DetailFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B74A1AD9854000F03E45 /* DetailFeedViewController.m */; };
 		0700B74E1AD98AD000F03E45 /* LendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B74D1AD98AD000F03E45 /* LendViewController.m */; };
 		0700B7511AD9EA2600F03E45 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B7501AD9EA2600F03E45 /* ProfileViewController.m */; };
+		0700B7541ADA297A00F03E45 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B7531ADA297A00F03E45 /* FavoritesViewController.m */; };
+		0700B7571ADA2E9800F03E45 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0700B7561ADA2E9800F03E45 /* HistoryViewController.m */; };
 		07A343671AD8F3F60082B5D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A343661AD8F3F60082B5D9 /* main.m */; };
 		07A3436A1AD8F3F60082B5D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A343691AD8F3F60082B5D9 /* AppDelegate.m */; };
 		07A343701AD8F3F60082B5D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A3436E1AD8F3F60082B5D9 /* Main.storyboard */; };
@@ -40,6 +42,10 @@
 		0700B74D1AD98AD000F03E45 /* LendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LendViewController.m; sourceTree = "<group>"; };
 		0700B74F1AD9EA2600F03E45 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		0700B7501AD9EA2600F03E45 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		0700B7521ADA297A00F03E45 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		0700B7531ADA297A00F03E45 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		0700B7551ADA2E9800F03E45 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		0700B7561ADA2E9800F03E45 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		07A343611AD8F3F60082B5D9 /* Prestapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prestapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A343651AD8F3F60082B5D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A343661AD8F3F60082B5D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +106,10 @@
 				07A343681AD8F3F60082B5D9 /* AppDelegate.h */,
 				07A343691AD8F3F60082B5D9 /* AppDelegate.m */,
 				07A3436E1AD8F3F60082B5D9 /* Main.storyboard */,
+				0700B7551ADA2E9800F03E45 /* HistoryViewController.h */,
+				0700B7561ADA2E9800F03E45 /* HistoryViewController.m */,
+				0700B7521ADA297A00F03E45 /* FavoritesViewController.h */,
+				0700B7531ADA297A00F03E45 /* FavoritesViewController.m */,
 				0700B74F1AD9EA2600F03E45 /* ProfileViewController.h */,
 				0700B7501AD9EA2600F03E45 /* ProfileViewController.m */,
 				0700B74C1AD98AD000F03E45 /* LendViewController.h */,
@@ -295,6 +305,8 @@
 			files = (
 				07A3436A1AD8F3F60082B5D9 /* AppDelegate.m in Sources */,
 				0700B7481AD9124300F03E45 /* FeedViewController.m in Sources */,
+				0700B7541ADA297A00F03E45 /* FavoritesViewController.m in Sources */,
+				0700B7571ADA2E9800F03E45 /* HistoryViewController.m in Sources */,
 				07A343671AD8F3F60082B5D9 /* main.m in Sources */,
 				0700B74B1AD9854000F03E45 /* DetailFeedViewController.m in Sources */,
 				0700B7511AD9EA2600F03E45 /* ProfileViewController.m in Sources */,

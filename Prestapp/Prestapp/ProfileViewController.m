@@ -22,24 +22,13 @@
     {
         self.buttonLogIn.title = @"Log Out";
     }
-    else
+    else{
+        self.nameFacebook.text = @"Nombre de usuario";
         self.buttonLogIn.title = @"Log In";
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)logInUser:(UIBarButtonItem *)sender
 {
@@ -79,6 +68,11 @@
                         NSString *facebookUserName = [userData objectForKey:@"name"];
                         NSString *facebookID = [userData objectForKey:@"id"];
                         NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
+                        
+                        NSData *photo = [NSData dataWithContentsOfURL:pictureURL];
+                        self.photoFacebook.image = [UIImage imageWithData:photo];
+                        self.nameFacebook.text = facebookUserName;
+                        
                         self.buttonLogIn.title = @"Log Out";
                     }
                 }];
@@ -89,6 +83,8 @@
     {
         [PFUser logOut];
         self.buttonLogIn.title = @"Log In";
+        self.nameFacebook.text = @"Nombre de usuario";
+        self.photoFacebook.image = [UIImage new];
     }
     
     

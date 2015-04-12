@@ -12,6 +12,9 @@
 
 @interface ProfileViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *photoFacebook;
+@property (weak, nonatomic) IBOutlet UILabel *nameFacebook;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonLogIn;
+@property (weak, nonatomic) IBOutlet UITableView *tableSettings;
 - (IBAction)logInUser:(UIBarButtonItem *)sender;
 @end

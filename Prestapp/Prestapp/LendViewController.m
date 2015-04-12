@@ -35,8 +35,8 @@
     self.cantidadLabel.text = @"Cantidad:";
     suma = 0;
     
-    cientos = [NSArray arrayWithObjects:@"15000", @"14000", @"13000", @"12000", @"11000", @"10000", @"9000", @"8000", @"7000", @"6000", @"5000", @"4000", @"3000", @"2000", @"10000", nil];
-    decenas = [NSArray arrayWithObjects:@"900", @"800", @"700", @"600", @"500", @"400", @"300", @"200", @"100", nil];
+    cientos = [NSArray arrayWithObjects:@"5000", @"6500", @"8000", @"9500",@"11000", @"12500", @"14000", nil];
+    decenas = [NSArray arrayWithObjects:@"12 meses", @"24 meses", @"36 meses", nil];
     unidades = [NSArray arrayWithObjects:@"90", @"80", @"70", @"60", @"50", @"40", @"30", @"20", @"10", nil];
     
     self.pickerView.delegate = self;
@@ -44,28 +44,25 @@
 }
 
 #pragma mark PickerView Delegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 2;
+}
+
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     switch(component)
     {
         case 0:
             return [cientos count];
-        break;
+            break;
         case 1:
             return [decenas count];
-        break;
-        case 2:
-            return [unidades count];
-        break;
+            break;
         default:
+            return 0;
             break;
     }
-    return 0;
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 3;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -74,32 +71,12 @@
     {
         case 0:
             return [cientos objectAtIndex:row];
-        case 1:
-            return [decenas objectAtIndexedSubscript:row];
-            break;
-        case 2:
-            return [unidades objectAtIndex:row];
-            break;
-        default:
-            break;
-    }
-    return nil;
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    switch(component)
-    {
-        case 0:
-            
             break;
         case 1:
-            
-            break;
-        case 2:
-            
+            return [decenas objectAtIndex:row];
             break;
         default:
+            return nil;
             break;
     }
 }
